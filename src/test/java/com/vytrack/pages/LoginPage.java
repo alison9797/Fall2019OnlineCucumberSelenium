@@ -1,9 +1,10 @@
 package com.vytrack.pages;
 
 //make this Driver comes from utilities
-import com.automation.tests.utilities.BrowserUtilities;
-import com.automation.tests.utilities.ConfigurationReader;
-import com.automation.tests.utilities.Driver;
+
+import com.vytrack.utilities.BrowserUtilities;
+import com.vytrack.utilities.ConfigurationReader;
+import com.vytrack.utilities.Driver;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
