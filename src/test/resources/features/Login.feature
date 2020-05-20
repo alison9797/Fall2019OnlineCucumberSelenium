@@ -14,7 +14,7 @@ Feature: Login
     Then user should verify that title is Dashboard
 
 
-    @driver
+    @driver @dashboard
     Scenario: Login as driver and verify that title is a Dash
       Given user is on the login page
       When user logs in as a driver
