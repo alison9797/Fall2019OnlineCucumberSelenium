@@ -17,6 +17,7 @@ public class Driver {
 
     }
 
+
     /**synchronized makes method thread safe. It ensures that only 1 thread can use it at the time.
      *
      * Thread safety reduces performance but it makes everything safe.
@@ -89,7 +90,7 @@ public class Driver {
         }
         return driverPool.get();
     }
-//every thread will create a clone
+
     public static void closeDriver() {
         if (driverPool != null) {
             driverPool.get().quit();
