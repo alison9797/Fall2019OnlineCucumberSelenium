@@ -55,7 +55,7 @@ public class LoginStepDefinitions {
 
     @When("user enters {string} username and {string} password")
     public void user_enters_username_and_password(String string, String string2) {
-        System.out.printf("Login with username %s and %s password", string, string2);
+        System.out.printf("Login with username %s and %s password\n", string, string2);
         loginPage.login(string, string2);
     }
 
