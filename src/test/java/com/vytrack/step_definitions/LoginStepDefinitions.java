@@ -1,6 +1,7 @@
 package com.vytrack.step_definitions;
 
 import com.vytrack.pages.LoginPage;
+import com.vytrack.utilities.BrowserUtilities;
 import com.vytrack.utilities.ConfigurationReader;
 import com.vytrack.utilities.Driver;
 import io.cucumber.java.en.Given;
@@ -10,7 +11,7 @@ import org.junit.Assert;
 
 public class LoginStepDefinitions {
 
-    LoginPage loginPage = new LoginPage();
+    private LoginPage loginPage = new LoginPage();
 
 
 
@@ -33,24 +34,29 @@ public class LoginStepDefinitions {
 
     @When("user logs in as a store manager")
     public void user_logs_in_as_a_store_manager() {
+
         loginPage.login("storemanager85", "UserUser123");
     }
 
-    @Then("user should verify that title is a Dashboard")
-    public void user_should_verify_that_title_is_a_Dashboard() {
+    @Then("user should verify that title is Dashboard")
+    public void user_should_verify_that_title_is_Dashboard() {
         System.out.println("Verify that title is Dashboard");
-
+        BrowserUtilities.waitForPageToLoad(10);
+        BrowserUtilities.wait(2);
         Assert.assertEquals("Dashboard", Driver.getDriver().getTitle());
-
-        Driver.closeDriver();
     }
-
 
 
     @When("user logs in as a driver")
     public void user_logs_in_as_a_driver() {
         System.out.println("Login as driver");
         loginPage.login("user19", "UserUser123");
+    }
+
+    @When("user enters {string} username and {string} password")
+    public void user_enters_username_and_password(String string, String string2) {
+        System.out.printf("Login with username %s and %s password", string, string2);
+        loginPage.login(string, string2);
     }
 
 
