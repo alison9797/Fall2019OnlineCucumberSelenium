@@ -10,7 +10,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage {
+public class LoginPage extends AbstractPageBase{
 
     //these two are instant variables
     @FindBy(id="prependedInput")
@@ -28,19 +28,6 @@ public class LoginPage {
     @FindBy(css = "[class='alert alert-error']")
     private WebElement warningMessage;
 
-
-
-    //THIS IS CONSTRUCTOR
-    public LoginPage(){
-        //this method helps us to able it
-        //to connect out webdriver, page class and PageFactory to find elements
-        //PageFactory - used to use @FindBy annotations
-        //PageFactory - helps us to find elements easier
-
-        //this line will be always the same
-        PageFactory.initElements(Driver.getDriver(), this);
-
-    }
 
     //method that returns a text of warning message webelement
     // Call it in the test class
