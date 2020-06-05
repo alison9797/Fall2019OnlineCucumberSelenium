@@ -59,13 +59,14 @@ public class CalendarEventsPage extends AbstractPageBase {
     public void enterCalendarEventTitle(String titleValue) {
         BrowserUtilities.waitForPageToLoad(20);
         wait.until(ExpectedConditions.visibilityOf(title)).sendKeys(titleValue);
+        wait.until(ExpectedConditions.attributeToBe(title, "value", titleValue));
     }
 
     public void enterCalendarEventDescription(String description){
         //wait until frame is available and switch to it
-        BrowserUtilities.waitForPageToLoad(20);
         wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(descriptionFrame));
         descriptionTextArea.sendKeys(description);
+        wait.until(ExpectedConditions.textToBePresentInElement(descriptionTextArea , description));
         driver.switchTo().defaultContent();//exit from the frame
     }
     public void clickOnSaveAndClose() {
@@ -123,8 +124,10 @@ public class CalendarEventsPage extends AbstractPageBase {
     public void clickToCreateCalendarEvent(){
 
         BrowserUtilities.waitForPageToLoad(20);
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("[title='Create Calendar event']")));
         //this wait coming from AbstractPageBase
         wait.until(ExpectedConditions.elementToBeClickable(createCalendarEvent)).click();
+        BrowserUtilities.waitForPageToLoad(20);
 
     }
 
