@@ -4,10 +4,11 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
+
 @RunWith(Cucumber.class)
 @CucumberOptions(
         glue = "com/vytrack/step_definitions",
-        features = "src/test/resources/features",
+        features = "src/test/resources/features/Activities",
         dryRun = false,
         strict = false,
         tags = "@create_calendar_event_2",
@@ -15,10 +16,8 @@ import org.junit.runner.RunWith;
                 "html:target/default-report",
                 "json:target/cucumber.json"
         }
+
 )
-
-
-public class CucumberRunner {
+public class ActivitiesTestRunner {
 
 }
-
