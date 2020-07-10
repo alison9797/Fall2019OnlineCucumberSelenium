@@ -30,13 +30,15 @@ public class Driver {
                     chromeOptions.addArguments("--start-maximized");
                     driverPool.set(new ChromeDriver(chromeOptions));
                     break;
-                case "chromeheadless":
+              /*  case "chromeheadless":
                     //to run chrome without interface (headless mode)
                     WebDriverManager.chromedriver().setup();
                     ChromeOptions options = new ChromeOptions();
                     options.setHeadless(true);
                     driverPool.set(new ChromeDriver(options));
                     break;
+
+               */
                 case "firefox":
                     WebDriverManager.firefoxdriver().setup();
                     driverPool.set(new FirefoxDriver());
@@ -65,13 +67,13 @@ public class Driver {
                     chromeOptions.addArguments("--start-maximized");
                     driverPool.set(new ChromeDriver(chromeOptions));
                     break;
-                case "chromeheadless":
+              //  case "chromeheadless":
                     //to run chrome without interface (headless mode)
-                    WebDriverManager.chromedriver().version("79").setup();
-                    ChromeOptions options = new ChromeOptions();
-                    options.setHeadless(true);
-                    driverPool.set(new ChromeDriver(options));
-                    break;
+                  //  WebDriverManager.chromedriver().version("79").setup();
+                  //  ChromeOptions options = new ChromeOptions();
+                  //  options.setHeadless(true);
+                  //  driverPool.set(new ChromeDriver(options));
+                  //  break;
                 case "firefox":
                     WebDriverManager.firefoxdriver().setup();
                     driverPool.set(new FirefoxDriver());
